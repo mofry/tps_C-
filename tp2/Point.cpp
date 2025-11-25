@@ -15,6 +15,8 @@ Point::Point(int px ,int py): x(px) , y(py)
 }
 
 int Point::getX() const{
+
+    //intérêt du return _x
   return x;
 }
 
