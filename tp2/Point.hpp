@@ -4,8 +4,9 @@
 
 class Point {
 
-    int x = 0;  //c++ n'initialise pas les attributs comme en java
-    int y = 0;
+    int _x = 0;  //c++ n'initialise pas les attributs comme en java
+    int _y = 0;
+    static int _compteur;
 
     public:
 
@@ -17,6 +18,7 @@ class Point {
         void setY(int y);
         void deplacerDe(int , int);
         void deplacerVers(int, int);
+        static int getCompteur();
 
 };
 

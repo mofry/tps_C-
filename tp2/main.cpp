@@ -9,7 +9,7 @@ int main(int, char**) {
 
     Point *p1 = new Point(5,5);
     
-    std::cout<<"Position initiale"<<"("<<p.getX()<<","<<p.getY()<<")"<<std::endl;
+    std::cout<<"Point "<<Point::getCompteur()<<"("<<p.getX()<<","<<p.getY()<<")"<<std::endl;
    
     /*p.deplacerVers(99,99);
 
