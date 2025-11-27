@@ -4,12 +4,18 @@
 
 class Bavarde {
 
-    Bavarde(int );
-    ~Bavarde();
+    
+    public :
+        int _elt;
+        Bavarde(int );
+        ~Bavarde();
 
-    void fonction(Bavarde );
+        void fonction(Bavarde );
+        int getElt() const;
   
-} bizarre(1);
+};
+
+extern Bavarde bizarre;
 
 
 
