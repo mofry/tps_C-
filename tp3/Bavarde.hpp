@@ -14,6 +14,7 @@ class Bavarde {
 
         void fonction(Bavarde );
         int getElt() const;
+        void setElt(int );
         void afficher() const;
 
   
@@ -32,15 +33,18 @@ class Couple{
 
 class Famille {
 
-    Bavarde *b;
+    Bavarde *_b;
 
     public :
         Famille();
+        Famille(int );
         ~Famille();
+        Bavarde& getFamille(int indice) const;
+
 
 
 };
-
+extern int TAILLE;
 
 
 #endif

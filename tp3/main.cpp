@@ -65,9 +65,15 @@ int main(int, char **) {
   //difference entre new et malloc c'est que new fait un malloc et en plus de ça il appelle le constructeur
   */
 
-  Couple c(Bavarde(1), Bavarde(2));
+  //Couple c(Bavarde(1), Bavarde(2));
 
   //c.afficher();
+
+  Famille f1;
+  Famille f2(3);
+  f2.getFamille(2).setElt(1);
+  std::cout<<f2.getFamille(2).getElt()<<std::endl;
+  
 
 
 
