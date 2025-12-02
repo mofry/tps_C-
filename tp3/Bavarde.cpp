@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "Bavarde.hpp"
 
 /*class Bavarde {
@@ -64,4 +65,17 @@ Bavarde& Famille::getFamille(int indice) const{
 //des valeurs il faut le faire sur la reference et non sur la copie
 
 int TAILLE = 5;
+
+
+Mere::Mere() {
+  std::cout<<"Mere"<<std::endl;
+}
+
+Mere::~Mere() {
+  std::cout<<"destructeur Mere"<<std::endl;
+}
+
+
+
+
 

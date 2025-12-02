@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "Bavarde.hpp"
 /*Petit apparté avant le tp
 class Foo {
@@ -75,7 +76,8 @@ int main(int, char **) {
   std::cout<<f2.getFamille(2).getElt()<<std::endl;*/
 
 
-
+    Fille f7; // quand on contruit un bjet de classe fille
+    //on fait direcement appel à celui de classe mere
 
 
 

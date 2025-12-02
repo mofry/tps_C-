@@ -44,6 +44,23 @@ class Famille {
 
 
 };
+
+
+
+
+class Mere {
+
+    public :
+        Mere();
+        Mere(int );
+        ~Mere();
+};
+
+class Fille : public Mere {
+
+
+
+};
 extern int TAILLE;
 
 
