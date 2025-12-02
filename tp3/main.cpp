@@ -69,11 +69,12 @@ int main(int, char **) {
 
   //c.afficher();
 
-  Famille f1;
+  /*Famille f1;
   Famille f2(3);
   f2.getFamille(2).setElt(1);
-  std::cout<<f2.getFamille(2).getElt()<<std::endl;
-  
+  std::cout<<f2.getFamille(2).getElt()<<std::endl;*/
+
+
 
 
 
