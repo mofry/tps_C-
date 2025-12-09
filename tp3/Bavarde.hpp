@@ -49,14 +49,32 @@ class Famille {
 
 
 class Mere {
+    
+    static int _cmp;
+    std::string _nom;
 
     public :
         Mere();
-        Mere(int );
-        ~Mere();
+        Mere(std::string);
+        virtual ~Mere();
+        static int getCompteur();
+        std::string getName() const;
+        void virtual afficher();
 };
 
 class Fille : public Mere {
+
+    std::string _couleur_pref;
+
+    public: 
+        Fille();
+        Fille(std::string nom );
+
+        virtual ~Fille();
+
+        void afficher() override;
+
+        
 
 
 

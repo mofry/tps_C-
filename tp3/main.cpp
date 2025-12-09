@@ -76,8 +76,30 @@ int main(int, char **) {
   std::cout<<f2.getFamille(2).getElt()<<std::endl;*/
 
 
-    Fille f7; // quand on contruit un bjet de classe fille
+    //Fille f1; // quand on contruit un bjet de classe fille
     //on fait direcement appel à celui de classe mere
+
+ 
+
+  /*  Mere m1("yo ");
+    Fille f2("heyy");
+
+    m1.afficher();
+    f2.afficher();
+   // std::cout<<f2.getName()<<std::endl;*/
+
+
+   Mere  *pm = new Mere("mere_dyn");
+    Fille *pf = new Fille("fille_dyn");
+    Mere  *pp = new Fille("fille vue comme mere");
+    pf->getName();
+
+    std::cout<< pf->getName() <<std::endl;
+
+    pm->afficher(); // affiche Mere
+    pf->afficher(); // affiche Fille
+    pp->afficher(); // affiche Mere
+    
 
 
 
