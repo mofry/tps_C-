@@ -7,8 +7,8 @@ CXX=g++
 EXE1=cpp5_test
 EXE2=cpp5
 
-CXXFLAGS+=-Wall -Wextra -MMD -g -O2
-LDFLAGS= 
+CXXFLAGS+=-Wall -Wextra -MMD -g -O2 -fsanitize=undefined
+LDFLAGS= -fsanitize=undefined
 
 OBJ1=$(addprefix build/,$(SRC1:.cpp=.o))
 DEP1=$(addprefix build/,$(SRC1:.cpp=.d))

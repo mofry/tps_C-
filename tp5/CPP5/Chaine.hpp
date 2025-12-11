@@ -19,6 +19,9 @@ class Chaine  {
 
         int getCapacite() const;
        const char * c_str() const;
+       //void afficher(std::ostream& ) const;
+       void afficherParReference(Chaine);
+
 
 
 
