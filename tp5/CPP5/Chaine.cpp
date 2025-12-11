@@ -55,3 +55,7 @@ const char * Chaine::c_str() const {
     return _tab;
 }
 
+void Chaine::afficher(std::ostream& os) const {
+    os<<_tab<<std::endl;
+}
+

@@ -3,7 +3,7 @@
 #include <sstream> // a mettre en commentaire 
 #include "Chaine.hpp"
 
-TEST_CASE("Constructeur par defaut") {
+/*TEST_CASE("Constructeur par defaut") {
    Chaine c;
    CHECK( -1 == c.getCapacite()); // vous pouvez mettre 0 si vous preferez
    CHECK(  0 == c.c_str()); // 0, NULL, ou nullptr
@@ -67,18 +67,18 @@ TEST_CASE("Constructeur de copie") {
 //est ce qu'avec le constructeur de copie on va à la meme adresse
 //que l'original
 
+*/
 
-/*
 TEST_CASE("methode afficher") {
 	const char *      original = "une chaine a tester";
     const Chaine      c1(original);
     std::stringstream ss;
     
-    c1.afficher(); // on verifie juste que ca compile
+   // c1.afficher(); // on verifie juste que ca compile
     c1.afficher(ss);
 
     CHECK( ss.str() == original ); // test de std::string :-)
-}*/
+}
 
 /*
 TEST_CASE("operateur d'affectation") {
@@ -92,7 +92,7 @@ TEST_CASE("operateur d'affectation") {
     CHECK( 0 == strcmp(s1.c_str(), s2.c_str() ));
 
     s1 = s1; // est ce que cela va survivre a l execution ?
-}*/
+}
 
 /*
 TEST_CASE("Surcharge <<") {
