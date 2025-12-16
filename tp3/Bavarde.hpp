@@ -41,6 +41,6 @@ class Famille {
 
 };
 
-
+/*On doit forcement faire const int& getX() const au lieu de int& getX()*/
 
 #endif
