@@ -81,15 +81,18 @@ int main(int, char **) {
 
  
 
-  /*  Mere m1("yo ");
-    Fille f2("heyy");
+    Mere m1("maman");
+    Fille f2("fille");
+    
+    //std::cout<<f2.getCompteur()<<std::endl;
+    
 
-    m1.afficher();
-    f2.afficher();
+   /* m1.afficher();
+    f2.afficher();*/
    // std::cout<<f2.getName()<<std::endl;*/
 
 
-   Mere  *pm = new Mere("mere_dyn");
+   /*Mere  *pm = new Mere("mere_dyn");
     Fille *pf = new Fille("fille_dyn");
     Mere  *pp = new Fille("fille vue comme mere");
     pf->getName();
@@ -98,7 +101,19 @@ int main(int, char **) {
 
     pm->afficher(); // affiche Mere
     pf->afficher(); // affiche Fille
-    pp->afficher(); // affiche Mere
+    pp->afficher(); // affiche Mere*/
+
+
+    //Couple c;  // on obtient 2 fois "tais toi 0" car c++ construit d'abord les attributs
+            //de classe avant de lire le corps du constructeur qui est vide ici
+
+    
+   /* Famille f(TAILLE);
+    //f.modifierFamille(0,Bavarde(3));
+    f.getFamille(0).setElt(3);
+    std::cout<<f.getFamille(0).getElt()<<std::endl;*/
+
+
     
 
 

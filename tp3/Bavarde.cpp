@@ -11,7 +11,9 @@
 */
 
 
-Bavarde::Bavarde():_elt(0) {};
+Bavarde::Bavarde():_elt(0) {
+  std::cout<<"Bavard"<<std::endl;
+};
 Bavarde::Bavarde(int elt) : _elt(0) {
   _elt=elt;
   std::cout<<"Bavard "<< _elt << std::endl;
@@ -41,9 +43,22 @@ void Bavarde::afficher() const {
 
 
 
+Couple::Couple() {
+  std::cout<<"Couple construit"<<std::endl;
+}
+
+
 Couple::Couple(Bavarde b1, Bavarde b2):_b1(b1), _b2(b2) {
     std::cout<<"("<< b1.getElt()<<","<< b2.getElt()<<")"<<std::endl;
 } 
+
+Couple::~Couple() {
+  std::cout<<"Destruction"<<std::endl;
+}
+/////////////////////////////////////////////////////////
+///////////////////////////////////////////FAMILLE////////////////////////
+/////////////////////////////////////
+
 
 Famille::Famille() : _b(nullptr) {
 }
@@ -51,6 +66,7 @@ Famille::Famille() : _b(nullptr) {
 Famille::Famille(int taille) : _b(nullptr) {
   _b = new Bavarde[taille]; //chaque element du tableau sera construit
   //a ll'aide du constructeur par defaut
+  
 }
 
 Famille::~Famille() {
@@ -64,26 +80,30 @@ Bavarde& Famille::getFamille(int indice) const{
 }  //c'est important de renvoyer une référence car si on veut parcourir la liste et modifier
 //des valeurs il faut le faire sur la reference et non sur la copie
 
+void Famille::modifierFamille(int indice , Bavarde newValue) {
+  getFamille(indice) = newValue;
+}
+
 int TAILLE = 5;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 Mere::Mere() {
 
-  //std::cout<<"Mere"<<std::endl;
+  std::cout<<"Mere  sans argument"<<std::endl;
   _cmp++;
 }
 
 Mere::Mere(std::string nom) : _nom(nom) {
 
-  //std::cout<<"Mere avec argument"<<std::endl;
+  std::cout<<"Mere avec argument"<<std::endl;
   _cmp++;
 }
 
 Mere::~Mere() {
-  //std::cout<<"destructeur Mere"<<std::endl;
+  std::cout<<"destructeur Mere"<<std::endl;
 }
 
-int Mere::getCompteur() {
+int Mere::getCompteur(){
   return _cmp;
 }
 
@@ -95,17 +115,18 @@ void Mere::afficher() {
   std::cout<<"Objet de classe Mere" << std::endl;
 }
 
+int Mere::_cmp = 0;
 
 /////////////////////////////////////////////////////////////////
 
 //Fille
 
 Fille::Fille() : Mere() {
-  //std::cout<< "Fille" <<std::endl;
+  std::cout<< "Fille" << getCompteur()<<std::endl;
   //std::cout<< "compteur = " << getCompteur() <<std::endl;
 }
 Fille::Fille(std::string nom) : Mere(nom) {
- // std::cout<< "Fille" <<std::endl;
+  std::cout<< "Fille" <<getCompteur()<<std::endl;
   //std::cout<< "compteur = " << getCompteur() <<std::endl;
 }
 
@@ -118,7 +139,7 @@ void Fille::afficher() {
 
 
 Fille::~Fille() {
-  //std::cout<< "Destructeur Fille" <<std::endl;
+  std::cout<< "Destructeur Fille" <<std::endl;
   
 }
 
@@ -129,7 +150,7 @@ Fille::~Fille() {
 
 
 
-int Mere::_cmp = 0;
+
 
 
 

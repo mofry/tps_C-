@@ -28,6 +28,7 @@ class Couple{
     public:
         Couple();
         Couple(Bavarde ,Bavarde);
+        ~Couple();
 
 };
 
@@ -40,10 +41,14 @@ class Famille {
         Famille(int );
         ~Famille();
         Bavarde& getFamille(int indice) const;
+        void modifierFamille(int indice,Bavarde );
 
 
 
 };
+
+
+
 
 
 
