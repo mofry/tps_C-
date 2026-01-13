@@ -1,4 +1,9 @@
 #include <iostream>
+
+using namespace std;
+
+///Exercice 1
+/*
 class Mere {
  public:
   Mere() {
@@ -21,7 +26,7 @@ class Fille : public Mere {
       Mere::tab[50] = 4;
 
    }
-   ~Fille() {
+   virtual ~Fille() {
      std::cout << "Fille::~Fille()" << std::endl;
     delete [] tab;
 
@@ -38,4 +43,34 @@ int main(int, char**) {
   delete m;
 
   return 0;
+}
+
+*/
+
+///Exercice 2
+
+class Mere {
+ public:
+  Mere() { m(); }
+  virtual void m() { cout << "mm" << endl; }
+  virtual ~Mere() {}
+};
+
+class Fille : public Mere {
+ public:
+  Fille() { m(); }
+  virtual void m() { cout << "mf" << endl; }
+  virtual ~Fille() {}
+};
+
+
+int main(int , char**) {
+
+    Fille f;  // ça veut dire donc que ici on devait avoir mf et mf au lieu
+    //  de mm et mf ? Quand on appelle le constructeur de Mere 
+    // ça appelle la methode m() de mere au lieu de la methode m 
+    // de fille au lieu du contraire 
+
+    Mere * o = new Fille;
+    o->m();
 }
