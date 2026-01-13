@@ -80,9 +80,17 @@ int main(int, char **) {
     //on fait direcement appel à celui de classe mere
 
  
-
+/*
     Mere m1("maman");
-    Fille f2("fille");
+    //std::cout<<m1.getName()<<std::endl;
+    Fille f1;
+    /*ille f2("fille");
+    std::cout<<f2.getName()<<std::endl;
+    m1.afficher(); //ça affiche objet de classe mere
+    f1.afficher(); //ça affiche objet de classe fille
+    //tout va bien. Le polymorphisme fonctionne  */
+
+    
     
     //std::cout<<f2.getCompteur()<<std::endl;
     
@@ -92,17 +100,24 @@ int main(int, char **) {
    // std::cout<<f2.getName()<<std::endl;*/
 
 
-   /*Mere  *pm = new Mere("mere_dyn");
+    Mere  *pm = new Mere("mere_dyn");
     Fille *pf = new Fille("fille_dyn");
     Mere  *pp = new Fille("fille vue comme mere");
-    pf->getName();
 
-    std::cout<< pf->getName() <<std::endl;
 
     pm->afficher(); // affiche Mere
     pf->afficher(); // affiche Fille
-    pp->afficher(); // affiche Mere*/
+    pp->afficher(); // affiche Mere
 
+
+    
+    //Ici le type statique est Mere* 
+    //tandis que celui dynamique est Fille? Or le type statique est lu à la compilation
+    //Or le type dynamique est connu à l'execution
+    //Il faut donc rajouter un virtual à la methode afficher pour que le type dynamique
+    //soit lu à l'execution
+    
+    std::cout<< pf->getName() <<std::endl;
 
     //Couple c;  // on obtient 2 fois "tais toi 0" car c++ construit d'abord les attributs
             //de classe avant de lire le corps du constructeur qui est vide ici

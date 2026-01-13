@@ -67,7 +67,7 @@ TEST_CASE("Constructeur de copie") {
 //est ce qu'avec le constructeur de copie on va à la meme adresse
 //que l'original
 
-*/
+
 
 TEST_CASE("methode afficher") {
 	const char *      original = "une chaine a tester";
@@ -79,8 +79,8 @@ TEST_CASE("methode afficher") {
 
     CHECK( ss.str() == original ); // test de std::string :-)
 }
+*/
 
-/*
 TEST_CASE("operateur d'affectation") {
 	Chaine s1("une premiere chaine");
     Chaine s2("une deuxieme chaine plus longue que la premiere");

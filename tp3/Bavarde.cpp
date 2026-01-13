@@ -89,18 +89,18 @@ int TAILLE = 5;
 /////////////////////////////////////////////////////////////////////////////////////////////
 Mere::Mere() {
 
-  std::cout<<"Mere  sans argument"<<std::endl;
+  //std::cout<<"Mere  sans argument"<<std::endl;
   _cmp++;
 }
 
 Mere::Mere(std::string nom) : _nom(nom) {
 
-  std::cout<<"Mere avec argument"<<std::endl;
+ // std::cout<<"Mere avec argument"<<std::endl;
   _cmp++;
 }
 
 Mere::~Mere() {
-  std::cout<<"destructeur Mere"<<std::endl;
+ // std::cout<<"destructeur Mere"<<std::endl;
 }
 
 int Mere::getCompteur(){
@@ -111,7 +111,7 @@ std::string Mere::getName() const {
   return _nom;
 }
 
-void Mere::afficher() {
+void Mere::afficher() const {
   std::cout<<"Objet de classe Mere" << std::endl;
 }
 
@@ -121,7 +121,7 @@ int Mere::_cmp = 0;
 
 //Fille
 
-Fille::Fille() : Mere() {
+Fille::Fille() : Mere(){
   std::cout<< "Fille" << getCompteur()<<std::endl;
   //std::cout<< "compteur = " << getCompteur() <<std::endl;
 }
@@ -130,7 +130,7 @@ Fille::Fille(std::string nom) : Mere(nom) {
   //std::cout<< "compteur = " << getCompteur() <<std::endl;
 }
 
-void Fille::afficher() {
+void Fille::afficher() const{
   std::cout<<"Objet de classe Fille"<<std::endl;
 }
 

@@ -64,7 +64,7 @@ class Mere {
         virtual ~Mere();
         static int getCompteur();
         std::string getName() const;
-        void virtual afficher();
+        virtual void afficher() const;
 };
 
 class Fille : public Mere {
@@ -77,7 +77,8 @@ class Fille : public Mere {
 
         virtual ~Fille();
 
-        void afficher() override;
+        virtual void afficher() const;
+        
 
         
 
