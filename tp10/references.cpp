@@ -24,7 +24,7 @@ int main(int, char **) {
   std::cout << i << " " << j << std::endl;
   delete p;
   std::cout << i << " " << j << std::endl;  //j "pointe vers une reference 
-  indéfinie// "
+  //indéfinie "
   return 0;
 }
 
