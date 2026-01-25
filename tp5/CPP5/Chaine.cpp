@@ -17,12 +17,13 @@ Chaine::Chaine(const char * inCS ) : Chaine() {
     }
 
     else {
-        _capacite = strlen(inCS) + 1; 
+        _capacite = strlen(inCS);
+        _tab = (char *) malloc(sizeof(char ) * (_capacite));
+        strcpy(_tab,inCS);
     }
 
-    _capacite = strlen(inCS);
-    _tab = (char *) malloc(sizeof(char ) * _capacite);
-    strcpy(_tab,inCS);
+
+    
 }
 
 Chaine::Chaine(int capa) : _capacite(capa){
@@ -32,13 +33,24 @@ Chaine::Chaine(int capa) : _capacite(capa){
     
 }
 
+Chaine::Chaine(const Chaine& source) : Chaine(source._capacite){
 
-Chaine::Chaine(const Chaine& source) : Chaine(source._tab){
+   
+    strcpy((*this)._tab,source._tab);
+
+    printf("Constructeur de copie appelé");
+
+
+    
+}
+
+
+// Chaine::Chaine(const Chaine& source) : Chaine(){
 
     
 
-    printf("Constructeur de copie appelé");
-}
+//     printf("Constructeur de copie appelé");
+// }
 
 
 Chaine::~Chaine(){
@@ -56,6 +68,16 @@ const char * Chaine::c_str() const {
 }
 
 void Chaine::afficher(std::ostream& os) const {
-    os<<_tab<<std::endl;
+    os<<(_tab);
+   
 }
+
+
+void operator= (const Chaine& source) {
+    Chaine* temp = this;
+    (*this) = source;
+    delete [] temp->_tab;
+    free(temp);
+}
+
 

@@ -21,6 +21,7 @@ int main(int, char**) {
     std::stringstream ss;
 
 	c1.afficher(ss);
+	
 
 
 	return 0;
