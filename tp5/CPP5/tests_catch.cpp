@@ -17,7 +17,7 @@
 //    CHECK(  0 == c.c_str()); // 0, NULL, ou nullptr
 // } 
 
-pijà
+
 // TEST_CASE("Constructeur par chaine C") {
 // 	char   source []= "rien";
 //     Chaine c1(source);
@@ -92,20 +92,33 @@ TEST_CASE("operateur d'affectation") {
     s1 = s2;
 
     CHECK( s1.getCapacite() == s2.getCapacite()); 
-    // CHECK( (void *)s1.c_str() != (void *)s2.c_str() );
-    // CHECK( 0 == strcmp(s1.c_str(), s2.c_str() ));
+     CHECK( (void *)s1.c_str() != (void *)s2.c_str() );
+     CHECK( 0 == strcmp(s1.c_str(), s2.c_str() ));
 
-    // s1 = s1; // est ce que cela va survivre a l execution ?
+     s1 = s1; // est ce que cela va survivre a l execution ? Oui
+     //car j'ai géré ce cas dans mon operateur que j'ai redefini
 }
 
-/*
+
 TEST_CASE("Surcharge <<") {
 	const char *      chaine = "une nouvelle surcharge";
 	Chaine            s(chaine);
     std::stringstream ss;
     
-    // ss << s;  // :-)
+     ss<<s;  // :-)
 
     CHECK( ss.str() == chaine ); //  test de std::string, again :-))
 }
-*/
+
+TEST_CASE("Surcharge []") {
+
+    const char *      chaine = "surcharge";
+    Chaine            s(chaine);
+    s[1] = 'r';
+     std::stringstream ss;
+    //ss<<s;
+    s.afficher(ss);
+    std::cout<<ss.str()<<std::endl;
+
+
+}

@@ -68,16 +68,43 @@ const char * Chaine::c_str() const {
 }
 
 void Chaine::afficher(std::ostream& os) const {
-    os<<(_tab);
+    os<<_tab;
    
 }
 
 
-void operator= (const Chaine& source) {
-    Chaine* temp = this;
-    (*this) = source;
-    delete [] temp->_tab;
-    free(temp);
+Chaine& Chaine::operator= (const Chaine& source) {
+    if (&source==this) return *this;
+
+    free(_tab);
+   this-> _capacite = source._capacite;
+    _tab = (char *) malloc(sizeof(char )  * _capacite);
+    strcpy(_tab,source._tab);
+    
+
+    return *this;
+
+}
+
+void Chaine::afficherParValeur(Chaine chaine) {
+    chaine.afficher(std::cout);
+}
+
+void Chaine::afficherParReference(Chaine& chaine) {
+    chaine.afficher(std::cout);
+}
+
+std::ostream& operator<<(std::ostream& os , const Chaine& chaine) {
+
+    chaine.afficher(os);
+
+    return os;
+
+
 }
 
 
+char& Chaine::operator[](int i) const {
+
+    return _tab[i];     
+}

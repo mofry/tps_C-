@@ -23,6 +23,5 @@ int main(int, char**) {
 	c1.afficher(ss);
 	
 
-
 	return 0;
 }

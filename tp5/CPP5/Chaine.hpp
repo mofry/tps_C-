@@ -20,12 +20,19 @@ class Chaine  {
         int getCapacite() const;
        const char * c_str() const;
        void afficher(std::ostream& ) const;
-       void afficherParReference(Chaine);
+       void afficherParValeur(Chaine);
+       void afficherParReference(Chaine&);
 
+       Chaine& operator=(const Chaine& source);
+       char& operator[](int ) const;
 
-
-
+    
+       
+    
 
 };
+
+
+std::ostream& operator<< (std::ostream&,const Chaine&);
 
 #endif
