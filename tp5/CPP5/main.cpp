@@ -10,17 +10,17 @@ void afficherParReference(Chaine &) {}*/
 
 
 int main(int, char**) {
-	/*Chaine c("une petite chaine");
+	// /*Chaine c("une petite chaine");
 
-	afficherParValeur(c);
-	afficherParReference(c);*/
+	// afficherParValeur(c);
+	// afficherParReference(c);*/
 
 
-	const char *      original = "une chaine a tester";
-    const Chaine      c1(original);
-    std::stringstream ss;
+	// const char *      original = "une chaine a tester";
+    // const Chaine      c1(original);
+    // std::stringstream ss;
 
-	c1.afficher(ss);
+	// c1.afficher(ss);
 	
 
 	return 0;

@@ -85,40 +85,62 @@
 // }
 
 
-TEST_CASE("operateur d'affectation") {
-	Chaine s1("une premiere chaine");
-    Chaine s2("une deuxieme chaine plus longue que la premiere");
-    
-    s1 = s2;
+// 
 
-    CHECK( s1.getCapacite() == s2.getCapacite()); 
-     CHECK( (void *)s1.c_str() != (void *)s2.c_str() );
-     CHECK( 0 == strcmp(s1.c_str(), s2.c_str() ));
 
-     s1 = s1; // est ce que cela va survivre a l execution ? Oui
-     //car j'ai géré ce cas dans mon operateur que j'ai redefini
+TEST_CASE ("Vecteur1") {
+  const Vecteur v;
+
+  REQUIRE ( v.capacity() >= 10 );
+  REQUIRE ( v.size()     == 0  );
 }
 
 
-TEST_CASE("Surcharge <<") {
-	const char *      chaine = "une nouvelle surcharge";
-	Chaine            s(chaine);
-    std::stringstream ss;
-    
-     ss<<s;  // :-)
+// TEST_CASE ("Vecteur2" ) {
+//   Vecteur v(20);
 
-    CHECK( ss.str() == chaine ); //  test de std::string, again :-))
-}
-
-TEST_CASE("Surcharge []") {
-
-    const char *      chaine = "surcharge";
-    Chaine            s(chaine);
-    s[1] = 'r';
-     std::stringstream ss;
-    //ss<<s;
-    s.afficher(ss);
-    std::cout<<ss.str()<<std::endl;
+//   REQUIRE ( v.capacity() == 20 );
+//   REQUIRE ( v.size()     == 0  );
+// }
 
 
-}
+
+// TEST_CASE ("Vecteur3" ) {
+//   Vecteur v(5);
+
+//   SECTION("ajout de quelques elements") {
+//     REQUIRE ( v.capacity() == 5 );
+
+//     for (int i=0; i<4; ++
+// }i)
+//       v.push_back(i*1.0);
+
+//     REQUIRE ( v.size()     == 4  );
+//   }
+
+//   SECTION("tableau un peu agrandi") {
+//     // on peut verifier que vecteur est bien un nouveau :-)
+//   REQUIRE ( v.capacity() == 5 );
+//     for (int i=0; i<6; ++i)
+//       v.push_back(i*1.0);
+
+//     REQUIRE ( v.capacity()  == 10 );
+//     REQUIRE ( v.size()      == 6  );
+//   }
+
+//   SECTION("on verifie les valeurs dans le vecteur") {
+//     for (int i=0; i<25; ++i)
+//       v.push_back(i*1.0);
+
+//     REQUIRE( v.capacity() ==  40 );
+//     REQUIRE( v.size()     ==  25 );
+
+//     for (int i=0; i<25; ++i)
+//       CHECK(v[i] == Approx(i*1.0+0.1));  // :-)
+//   }
+
+//   SECTION("on verifie les exceptions") {
+//     REQUIRE_THROWS_AS( v[-1] == 0, Vecteur::OutOfRangeException);
+//     REQUIRE_THROWS_AS( v [6] == 0, std::bad_alloc);  // :-)
+//    }
+// }
